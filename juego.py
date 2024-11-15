@@ -49,6 +49,7 @@ def mover_player(tablero, direccion):
         columna_obj -= 1
     elif direccion == mov.DERECHA:
         columna_obj += 1
+
     else:
         print('No se reconoce la direccion')
 
@@ -64,11 +65,14 @@ def mover_player(tablero, direccion):
 
     elif  tablero[fila_obj][columna_obj] == fichas.GOALS :
         tablero[fila][columna] = fichas.PLAYER
-        tablero[fila_obj][columna_obj] = fichas.SPACE
- 
+        tablero[fila_obj][columna_obj] = fichas.GOALS 
+    elif  tablero[fila_obj][columna_obj] == fichas.CAJ :
+        tablero[fila][columna] = fichas.PLAYER
+        tablero[fila_obj][columna_obj] = fichas.GOAL
 
     else:
-        print('Movimiento no valido')
+        print('Movimiento no valido') 
+   
 
 
 def win(tablero):
