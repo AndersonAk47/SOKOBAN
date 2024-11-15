@@ -58,13 +58,13 @@ def mover_player(tablero, direccion):
         return
     
 
-    if tablero[fila_obj][columna_obj] == fichas.SPACE :
+    if  tablero[fila_obj][columna_obj] == fichas.SPACE :
         tablero[fila][columna] = fichas.SPACE
         tablero[fila_obj][columna_obj] = fichas.PLAYER
-    
+
     elif  tablero[fila_obj][columna_obj] == fichas.GOALS :
-        tablero[fila][columna] = fichas.GOALS
-        tablero[fila_obj][columna_obj] = fichas.PLAYER
+        tablero[fila][columna] = fichas.PLAYER
+        tablero[fila_obj][columna_obj] = fichas.SPACE
  
 
     else:
@@ -76,7 +76,7 @@ def win(tablero):
 
     for fila in tablero:
         for columna in fila:
-            if columna == fichas.GOALS or columna ==  fichas.GANADOR :
+            if columna == fichas.CAJ or columna ==  fichas.GANADOR :
                 victoria = False
 
     return victoria
